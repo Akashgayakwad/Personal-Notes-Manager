@@ -1,7 +1,7 @@
 $("#signupform").submit(function(event){ 
     event.preventDefault();
     var datatopost = $(this).serializeArray();
-    console.log(datatopost);
+    //console.log(datatopost);
     $.ajax({
         url: "signup.php",
         type: "POST",
@@ -24,17 +24,39 @@ $("#signupform").submit(function(event){
 
 $("#loginform").submit(function(event){ 
     event.preventDefault();
-    var datatopost1 = $(this).serializeArray();
-    console.log(datatopost1);
+    var datatopost = $(this).serializeArray();
+    //console.log(datatopost);
     $.ajax({
         url: "login.php",
         type: "POST",
-        data: datatopost1,
+        data: datatopost,
         success: function(data){
             if(data == "success"){
                 window.location = "mainpageloggedin.php";
             }else{
                 $('#loginmessage').html(data);
+            }
+        },
+        error: function(){
+            $("#loginmessage").html("<div class='alert alert-danger'>There was an error with the Ajax Call. Please try again later.</div>");
+            
+        }
+    
+    });
+
+});
+
+
+$("#forgotpasswordform").submit(function(event){ 
+    event.preventDefault();
+    var datatopost = $(this).serializeArray();
+    //console.log(datatopost);
+    $.ajax({
+        url: "forgotpassword.php",
+        type: "POST",
+        data: datatopost,
+        success: function(data){
+        $('#forgotpasswordmessage').html(data);
             }
         },
         error: function(){

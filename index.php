@@ -1,4 +1,9 @@
-
+<?php
+    session_start();
+    include('connection.php');
+    include('logout.php');
+    include('rememberme.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,20 +15,17 @@
       <link href="style.css" rel="stylesheet">
   </head>
   <body>
+      
     <!--Navigation Bar-->  
       <nav role="navigation" class="navbar navbar-custom navbar-fixed-top">
-      
           <div class="container-fluid">
-            
               <div class="navbar-header">
-              
                   <a class="navbar-brand">Online Notes</a>
                   <button type="button" class="navbar-toggle" data-target="#navbarCollapse" data-toggle="collapse">
                       <span class="sr-only">Toggle navigation</span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
-                  
                   </button>
               </div>
               <div class="navbar-collapse collapse" id="navbarCollapse">
@@ -35,13 +37,11 @@
                   <ul class="nav navbar-nav navbar-right">
                     <li><a href="#loginModal" data-toggle="modal">Login</a></li>
                   </ul>
-              
               </div>
           </div>
-      
       </nav>
     
-    <!--Jumbotron with Sign up Button-->
+      <!--Jumbotron with Sign up Button-->
       <div class="jumbotron" id="myContainer">
           <h1>Online Notes App</h1>
           <p>Your Notes with you wherever you go.</p>
@@ -49,7 +49,7 @@
           <button type="button" class="btn btn-lg green signup" data-target="#signupModal" data-toggle="modal">Sign up-It's free</button>
       </div>
 
-    <!--Login form-->    
+      <!--Login form-->    
       <form method="post" id="loginform">
         <div class="modal" id="loginModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -63,11 +63,8 @@
                   </h4>
               </div>
               <div class="modal-body">
-                  
                   <!--Login message from PHP file-->
                   <div id="loginmessage"></div>
-                  
-
                   <div class="form-group">
                       <label for="loginemail" class="sr-only">Email:</label>
                       <input class="form-control" type="email" name="loginemail" id="loginemail" placeholder="Email" maxlength="50">
@@ -191,7 +188,7 @@
           </div>
       </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jquery-2.0.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="index.js"></script>
   </body>

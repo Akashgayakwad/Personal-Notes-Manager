@@ -1,6 +1,6 @@
 html{
-position: relative;
-min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 body{
     background: url(images/1044.jpg) no-repeat center center;
@@ -18,14 +18,14 @@ body{
 }
 
 .signup{
- margin-top: 50px;   
+    margin-top: 50px;   
 }
 .green{
- background-color: rgba(114, 190, 35, 0.7);
+    background-color: rgba(114, 190, 35, 0.7);
 }
 
 .green:hover{
- background-color: rgb(114, 190, 35);
+    background-color: rgb(114, 190, 35);
 }
 
 
